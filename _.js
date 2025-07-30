@@ -34,14 +34,16 @@ const _ = {
         return wordArray;
 
     },
-    pad(string, lenght) {
+    pad(string, length) {
+        let stringLength = length - string.length; 
+        let left = Math.floor(stringLength / 2 );
+        let right = stringLength - left; 
 
-        /*
-        idea 
-            .padddingstart(start)
-            .paddingend()
-
-        */
+        let rightPad = string.padStart(string.length+left);
+       console.log(rightPad.length);
+       let finalPad = rightPad.padEnd(rightPad.length + right)
+       console.log(finalPad, finalPad.length)
+        return finalPad
 
     }, 
 }; 
@@ -56,7 +58,8 @@ const _ = {
 //let arrayOfWords = _.words('La cucuaracha ya no puede caminar'); 
 //console.log(arrayOfWords);
 
-
+let paddedString = _.pad('hello', 10);
+console.log(paddedString); 
 
 
 // Do not write or modify code below this line.
